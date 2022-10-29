@@ -52,3 +52,31 @@ class DisjointSet
         return true;
     }
 }
+
+
+
+
+
+class Edge 
+{
+
+    
+    final int firstCell;
+    final int secondCell;
+
+    Edge(int firstCell, int secondCell)
+    {
+        this.firstCell = firstCell;
+        this.secondCell = secondCell;
+    }
+
+    int getFirstCell()
+    {
+        return firstCell;
+    }
+
+    int getSecondCell()
+    {
+        return secondCell;
+    }
+}
