@@ -80,3 +80,14 @@ class Edge
         return secondCell;
     }
 }
+
+
+
+import maze.model.Cell;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
+import static maze.model.Cell.Type.PASSAGE;
