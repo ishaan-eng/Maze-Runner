@@ -1,5 +1,7 @@
 package maze.generation;
 
+import static java.util.stream.IntStream.range;
+
 class DisjointSet
 {
 
