@@ -2,7 +2,7 @@ package maze.generation;
 
 import static java.util.stream.IntStream.range;
 
-class DisjointSet
+public class DisjointSet
 {
 
     int[] parent;
@@ -59,7 +59,7 @@ class DisjointSet
 
 
 
-class Edge 
+public class Edge 
 {
 
     
@@ -94,7 +94,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static maze.model.Cell.Type.PASSAGE;
 
-class PassageTree 
+public class PassageTree 
 {
 
     int height;
