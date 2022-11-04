@@ -56,17 +56,17 @@ public class DisjointSet
 }
 
 
-
-
-
+                               //This class stores an information about the particular edge in a passage tree.
+                               //It stores two coordinates corresponding to the cells locations in a grid.
+                               //Cells locations are consider as they would be in 1-dimensional array and are calculated using the row * width + column formula.
 public class Edge 
 {
 
     
-    final int firstCell;
-    final int secondCell;
+    final int firstCell;                //The coordinate of the first cell.
+    final int secondCell;               //The coordinate of the second cell.
 
-    Edge(int firstCell, int secondCell)
+    Edge(int firstCell, int secondCell)   //Creates a new edge with given cells coordinates.
     {
         this.firstCell = firstCell;
         this.secondCell = secondCell;
