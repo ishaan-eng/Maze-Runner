@@ -114,7 +114,7 @@ public class PassageTree
         return createPassages(tree);
     }
 
-    private List<Edge> createEdges()              
+    private List<Edge> createEdges()              //Creates a list of all possible edges in an imaginary edge form.
     {
         var edges = new ArrayList<Edge>();
         for (int column = 1; column < width; column++) 
@@ -140,13 +140,13 @@ public class PassageTree
         return edges;
     }
 
-    private int toIndex(int row, int column)
-    {
+    private int toIndex(int row, int column)        //Transforms the coordinates in a 2-dimensional array to the coordinate in a 1-dimensional array 
+    {                                               //using row * width + column formula.
         return row * width + column;
     }
 
-    private List<Edge> buildRandomSpanningTree(List<Edge> edges) 
-    {
+    private List<Edge> buildRandomSpanningTree(List<Edge> edges) //Generates a list of edges that connect passages. Its a Randomized Kruskals algorithm implementation.
+    {                                                            //On each step of the algorithm an edge is added to the list only if it connects two disjoint subsets.
         var disjointSets = new DisjointSet(width * height);
         return edges
             .stream()
@@ -155,14 +155,14 @@ public class PassageTree
     }
 
     
-    private boolean connects(Edge edge, DisjointSet disjointSet)
+    private boolean connects(Edge edge, DisjointSet disjointSet)            //Checks if an edge connects two disjoint subsets.
     {
         return disjointSet.union(edge.getFirstCell(), edge.getSecondCell());
     }
 
     
-    private List<Cell> createPassages(List<Edge> spanningTree) 
-    {
+    private List<Cell> createPassages(List<Edge> spanningTree)              //Scales and converts edges in an imaginary edge form to the cells
+    {                                                                       //which connect passages in a original form.
         return spanningTree
             .stream()
             .map(edge -> {
@@ -172,16 +172,16 @@ public class PassageTree
             }).collect(toList());
     }
 
-    private Cell fromIndex(int index)
-    {
+    private Cell fromIndex(int index)     //Transforms the coordinate in a 1-dimensional array back to the coordinates in a 2-dimensional array using the
+    {                                     //row = index / width and column = index % width formulas.
         var row = index / width;
         var column = index % width;
         return new Cell(row, column, PASSAGE);
     }
 
-    private Cell getPassage(Cell first, Cell second)
-    {
-        var row = first.getRow() + second.getRow() + 1;
+    private Cell getPassage(Cell first, Cell second)        //Given the coordinates of two cells that compose an edge in an imaginary edge form,
+    {                                                       //it scales and transforms them to the coordinates of the cell that connect passages in an
+        var row = first.getRow() + second.getRow() + 1;     //original form. Returns a passage cell with this coordinates.
         var column = first.getColumn() + second.getColumn() + 1;
         return new Cell(row, column, PASSAGE);
     }
