@@ -10,12 +10,6 @@ class Node
     private final int column;                                 //The horizontal coordinate of this node in a grid.
     private final boolean isWall;                             //Indicates if this node is a wall.
 
-    /**
-     * A parent node is saved to reconstruct a path if
-     * it goes through this node. If node has no parent
-     * its parent is equal to this node, i.e.
-     * {@code node == node.getParent()}.
-     */
     private Node parent;           // A parent node is saved to reconstruct a path if it goes through this node. If node has no parent its parent is equal to this node
     private int g;                 //The cost of the path from the start node to this node.
     private int h;                 //The estimated cost of the path from this node to the end node.
