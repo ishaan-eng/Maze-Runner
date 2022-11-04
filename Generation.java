@@ -97,16 +97,16 @@ import static maze.model.Cell.Type.PASSAGE;
 public class PassageTree 
 {
 
-    int height;
-    int width;
+    int height;               //The height of the maze in an imaginary edge form.
+    int width;                //The width of the maze in an imaginary edge form.
 
-    public PassageTree(int height, int width) 
+    public PassageTree(int height, int width)     //Creates a new imaginary edge form
     {
         this.height = (height - 1) / 2;
         this.width = (width - 1) / 2;
     }
 
-    public List<Cell> generate() 
+    public List<Cell> generate()                  //Generates a random list of cells that connect passages in an original form such that a maze is simply connected.
     {
         var edges = createEdges();
         Collections.shuffle(edges);
@@ -114,7 +114,7 @@ public class PassageTree
         return createPassages(tree);
     }
 
-    private List<Edge> createEdges() 
+    private List<Edge> createEdges()              
     {
         var edges = new ArrayList<Edge>();
         for (int column = 1; column < width; column++) 
