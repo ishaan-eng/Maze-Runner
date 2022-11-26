@@ -1,4 +1,4 @@
-
+package maze.algo.generation;
 
 import maze.model.Cell;
 
