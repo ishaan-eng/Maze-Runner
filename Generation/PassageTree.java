@@ -1,13 +1,13 @@
-package maze.algo.generation;
+package Generation;
 
-import maze.model.Cell;
+import Maze.Cell;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static maze.model.Cell.Type.PASSAGE;
+import static Maze.Cell.Type.PASSAGE;
 
 public class PassageTree 
 {
