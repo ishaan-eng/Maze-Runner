@@ -1,4 +1,4 @@
-import Console;
+import Interface.Console;
 
 public class Main 
 {
