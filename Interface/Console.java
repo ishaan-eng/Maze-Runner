@@ -1,6 +1,6 @@
 package Interface;
 
-import model.Maze;
+import Maze.Model;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,7 +13,7 @@ import static java.lang.Integer.parseInt;
 public class Console                        //This class is a console wrapper for user interaction. Reads an input and prints the output to the console.
 {                                           //Stores a maze internally.
     private Scanner scanner;
-    private Maze maze;
+    private Model maze;
     private boolean isMazeAvailable = false;
 
     /**
@@ -103,13 +103,13 @@ public class Console                        //This class is a console wrapper fo
         if (split.length == 1) 
         {
             var size = parseInt(split[0]);
-            maze = new Maze(size);
+            maze = new Model(size);
         } 
       else if (split.length == 2) 
       {
             var height = parseInt(split[0]);
             var width = parseInt(split[1]);
-            maze = new Maze(height, width);
+            maze = new Model(height, width);
       } 
       else 
       {
@@ -126,7 +126,7 @@ public class Console                        //This class is a console wrapper fo
         try 
         {
             var content = Files.readString(Paths.get(filename));
-            maze = Maze.load(content);
+            maze = Model.load(content);
             isMazeAvailable = true;
             System.out.println("The maze is loaded");
         } 
