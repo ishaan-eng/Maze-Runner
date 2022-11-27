@@ -10,7 +10,7 @@ import static maze.model.Cell.Type.PASSAGE;
 import static maze.model.Cell.Type.WALL;
 
 
-public class Maze
+public class Model
 {
 
     final int height;
@@ -19,7 +19,7 @@ public class Maze
 
     boolean isSolved = false;
 
-    public Maze(int height, int width) 
+    public Model(int height, int width) 
     {
         if (height < 3 || width < 3)
         {
@@ -33,7 +33,7 @@ public class Maze
         fillGrid();
     }
 
-    public Maze(int size) 
+    public Model(int size) 
     {
         this(size, size);
     }
@@ -164,7 +164,7 @@ public class Maze
     }
 
 
-    public static Maze load(String str) {
+    public static Model load(String str) {
         try {
             var whole = str.split("\n");
             var size = whole[0].split(" ");
@@ -178,7 +178,7 @@ public class Maze
                         i, j, intToType(parseInt(row[j]))
                     );
             }
-            return new Maze(height, width, grid);
+            return new Model(height, width, grid);
         } catch (Exception e) {
             throw new IllegalArgumentException(
                 "Cannot load the maze. " +
@@ -187,7 +187,7 @@ public class Maze
         }
     }
 
-    private Maze(int height, int width, Cell[][] grid) 
+    private Model(int height, int width, Cell[][] grid) 
     {
         this.height = height;
         this.width = width;
