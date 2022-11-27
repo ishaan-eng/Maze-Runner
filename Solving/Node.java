@@ -1,4 +1,4 @@
-package maze.algo.solving;
+package Solving;
 
 import java.util.Objects;
 
