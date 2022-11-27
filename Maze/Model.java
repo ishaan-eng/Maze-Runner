@@ -1,13 +1,13 @@
-package maze.model;
+package Maze;
 
-import maze.algo.generation.PassageTree;
-import maze.algo.solving.Fugitive;
+import Generation.PassageTree;
+import Solving.Fugitive;
 
 import java.util.function.Consumer;
 
 import static java.lang.Integer.parseInt;
-import static maze.model.Cell.Type.PASSAGE;
-import static maze.model.Cell.Type.WALL;
+import static Maze.Cell.Type.PASSAGE;
+import static Maze.Cell.Type.WALL;
 
 
 public class Model
