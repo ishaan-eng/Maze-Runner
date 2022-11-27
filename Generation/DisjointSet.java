@@ -1,4 +1,4 @@
-package maze.generation;
+package Generation;
 
 import static java.util.stream.IntStream.range;
 
