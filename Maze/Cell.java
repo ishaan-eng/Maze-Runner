@@ -1,4 +1,4 @@
-package maze.model;
+package Maze;
 
 import java.util.Objects;
 
