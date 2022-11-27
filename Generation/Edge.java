@@ -1,4 +1,4 @@
-package maze.algo.generation;
+package Generation;
 
 public class Edge 
 {
