@@ -1,6 +1,6 @@
-package maze.algo.solving;
+package Solving;
 
-import maze.model.Cell;
+import Maze.Cell;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 import static java.util.Comparator.comparingInt;
-import static maze.model.Cell.Type.ESCAPE;
+import static Maze.Cell.Type.ESCAPE;
 
 public class Fugitive 
 {
