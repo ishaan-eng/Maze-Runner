@@ -1,6 +1,4 @@
-package maze;
-
-import maze.Console;
+import Console;
 
 public class Main 
 {
